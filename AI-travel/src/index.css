@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.option-box {
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option-box:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.selected-box {
+  border: 2px solid #3b82f6;
+  background-color: #eff6ff;
+}
+
+/* Custom button styles */
+@layer components {
+  .travel-button {
+    @apply rounded-lg border border-transparent bg-gradient-to-br from-purple-500 to-pink-500 
+    text-white font-semibold py-2 px-4 uppercase tracking-wider cursor-pointer
+    hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+}
+
+/* Basic element styles */
+@layer base {
+  h1 {
+    @apply text-3xl font-bold leading-tight;
+  }
+  
+  h2 {
+    @apply text-2xl font-bold leading-tight;
+  }
+  
+  /* to keep custom button styling */
+  button {
+    @apply rounded-lg border border-transparent bg-gradient-to-br from-purple-600 to-pink-500 
+    text-white font-semibold text-base uppercase tracking-wider
+    whitespace-nowrap overflow-hidden;
+  }
+}
