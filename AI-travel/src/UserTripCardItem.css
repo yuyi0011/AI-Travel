@@ -1,0 +1,125 @@
+
+/* 🔗 Link Container - No default link styling */
+.trip-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+/* 🎴 Main Card Container - The "Wow" Effect Hub */
+.trip-card {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 🎭 Smooth animation curve */
+  border-radius: 0.75rem; /* Same as Tailwind's rounded-xl */
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: #ffffff;
+}
+
+/* 🚀 Hover Magic - Scale up with subtle shadow enhancement */
+.trip-card:hover {
+  transform: scale(1.05); /* Same as Tailwind's hover:scale-105 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🖼️ Image Styling - The Visual Hook */
+.trip-image {
+  width: 100%;
+  height: 220px; /* Same as Tailwind's h-[220px] */
+  object-fit: cover; /* Same as Tailwind's object-cover */
+  border-radius: 0.75rem 0.75rem 0 0; /* Rounded top corners only */
+  transition: transform 0.3s ease;
+}
+
+/* 🎯 Extra Image Hover Effect - Subtle zoom on image itself */
+.trip-card:hover .trip-image {
+  transform: scale(1.02);
+}
+
+/* 📄 Information Container - Content Organization */
+.trip-info {
+  padding: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* 🏷️ Trip Title - The Main Attraction */
+.trip-title {
+  font-weight: 700; /* Same as Tailwind's font-bold */
+  font-size: 1.125rem; /* Same as Tailwind's text-lg */
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  transition: color 0.2s ease;
+}
+
+/* 🎨 Title Hover Effect */
+.trip-card:hover .trip-title {
+  color: #3b82f6; /* Nice blue accent on hover */
+}
+
+/* 📝 Trip Details - Supporting Information */
+.trip-details {
+  font-size: 0.875rem; /* Same as Tailwind's text-sm */
+  color: #6b7280; /* Same as Tailwind's text-gray-500 */
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* 📱 Responsive Design - Mobile First Approach */
+@media (max-width: 768px) {
+  .trip-card {
+    margin-bottom: 1rem;
+  }
+  
+  .trip-image {
+    height: 180px; /* Slightly smaller on mobile */
+  }
+  
+  .trip-info {
+    padding: 0.75rem;
+  }
+  
+  .trip-title {
+    font-size: 1rem; /* Slightly smaller title on mobile */
+  }
+  
+  .trip-details {
+    font-size: 0.8rem;
+  }
+}
+
+/* 🌟 Loading State - For when images are loading */
+.trip-image[src*="placeholder.jpg"] {
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+  background-size: 200% 200%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% -200%; }
+  100% { background-position: 200% 200%; }
+}
+
+/* 🎭 Focus States - Accessibility Enhancement */
+.trip-card-link:focus .trip-card {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* 🎪 Extra Polish - Card Grid Integration */
+@media (min-width: 769px) {
+  .trip-card {
+    height: 100%; /* Full height in grid layouts */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trip-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

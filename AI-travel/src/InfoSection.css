@@ -1,0 +1,128 @@
+
+
+/* 🏗️ MAIN CONTAINER - Foundation of our component */
+.info-section {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* 🖼️ HERO IMAGE CONTAINER - Image display zone */
+.hero-image-container {
+  width: 100%;
+  margin-bottom: 1.25rem; /* 5 in Tailwind spacing */
+  border-radius: 0.75rem; /* rounded-xl */
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 📸 HERO IMAGE - The main attraction */
+.hero-image {
+  height: 340px; /* h-[340px] */
+  width: 100%; /* w-full */
+  object-fit: cover; /* object-cover */
+  border-radius: 0.75rem; /* rounded-xl */
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.02); /* Subtle zoom on hover */
+}
+
+/* 🌈 FALLBACK IMAGE - Beautiful gradient when photo fails */
+.fallback-image {
+  height: 340px;
+  width: 100%;
+  background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
+  /* Same as: bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 */
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ Animated background for fallback */
+.fallback-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.fallback-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.fallback-emoji {
+  font-size: 3.75rem; /* text-6xl */
+  margin-bottom: 1rem; /* mb-4 */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.fallback-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fallback-subtitle {
+  font-size: 0.875rem; /* text-sm */
+  opacity: 0.8; /* opacity-80 */
+  margin-top: 0.5rem; /* mt-2 */
+  margin-bottom: 0;
+}
+
+/* 🔄 LOADING IMAGE - Pulse animation while loading */
+.loading-image {
+  height: 340px;
+  width: 100%;
+  background-color: #e5e7eb; /* bg-gray-200 */
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-content {
+  text-align: center;
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.loading-emoji {
+  font-size: 2.25rem; /* text-4xl */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.loading-text {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* 📋 TRIP INFO HEADER - Main information section */
+.trip-info-header {
+  display: flex;
+  justify-content: space-between;}
