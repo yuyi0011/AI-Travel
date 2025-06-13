@@ -5,6 +5,7 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import CreateTrip from './create-trip/index.jsx'
+import Footer from './view-trip/components/Footer.jsx'
 import Header from './components/custom/Header.jsx'  
 import { Toaster } from './components/ui/sonner.jsx'
 import { GoogleOAuthProvider } from '@react-oauth/google'
@@ -38,34 +39,16 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_AUTH_CLIENT_ID}>
-      <Header />
+      <div className="app-layout">
+        <Header />
+        <main className="main-content">
+          <RouterProvider router={router} />
+        </main>
+        <Footer />  {/* 🎉 FIXED: Footer now shows on ALL pages! */}
+      </div>
       <Toaster />
-      <RouterProvider router={router} />
     </GoogleOAuthProvider>
   </React.StrictMode>,
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

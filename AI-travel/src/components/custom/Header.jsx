@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { toast } from 'sonner'
-import '../../Header.css' // 🎯 Our navigation styling arsenal
+import '../../Header.css' // 🎯 The navigation styling arsenal
 
 function Header() {
   const [user, setUser] = useState(null)
