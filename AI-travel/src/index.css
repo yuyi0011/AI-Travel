@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Pure CSS Solution has been chosed from tailwind - as tailwind did not work so well with React 19 with the Google place auto fill up:Conflicting peer dependency: react-dom@18.3.1
 npm WARN node_modules/react-dom
 npm WARN   peer react-dom@"^16.8.0 || ^17.0.0 || ^18.0.0" from react-google-places-autocomplete@4.1.0      */
@@ -20,11 +21,19 @@ body {
 }
 
 /* Option boxes for budget and travelers */
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+>>>>>>> f50de0aa62746a1f5e723ec9f5b3e4e0a1f6f2fc
 .option-box {
   padding: 1rem;
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   cursor: pointer;
+<<<<<<< HEAD
   transition: all 0.2s ease;
   background: white;
 }
@@ -32,11 +41,19 @@ body {
 .option-box:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: translateY(-1px);
+=======
+  transition: all 0.2s;
+}
+
+.option-box:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+>>>>>>> f50de0aa62746a1f5e723ec9f5b3e4e0a1f6f2fc
 }
 
 .selected-box {
   border: 2px solid #3b82f6;
   background-color: #eff6ff;
+<<<<<<< HEAD
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
@@ -366,5 +383,33 @@ h3 {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+=======
+}
+
+/* Custom button styles */
+@layer components {
+  .travel-button {
+    @apply rounded-lg border border-transparent bg-gradient-to-br from-purple-500 to-pink-500 
+    text-white font-semibold py-2 px-4 uppercase tracking-wider cursor-pointer
+    hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+}
+
+/* Basic element styles */
+@layer base {
+  h1 {
+    @apply text-3xl font-bold leading-tight;
+  }
+  
+  h2 {
+    @apply text-2xl font-bold leading-tight;
+  }
+  
+  /* to keep custom button styling */
+  button {
+    @apply rounded-lg border border-transparent bg-gradient-to-br from-purple-600 to-pink-500 
+    text-white font-semibold text-base uppercase tracking-wider
+    whitespace-nowrap overflow-hidden;
+>>>>>>> f50de0aa62746a1f5e723ec9f5b3e4e0a1f6f2fc
   }
 }
