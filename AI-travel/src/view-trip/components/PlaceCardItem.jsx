@@ -3,8 +3,7 @@ import { GetPlaceDetails, PHOTO_REF_URL } from '@/service/GlobalApi';
 import React, { useEffect, useState } from 'react'
 import { FaMapLocationDot } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-// Import CSS file - adjust path based on your file location
-import '../../places.css'; // If places.css is in src folder
+import '../../places.css'; 
 
 function PlaceCardItem({ place }) {
   const [photoUrl, setPhotoUrl] = useState();
